@@ -1,0 +1,8 @@
+reporte:
+    disponibilidad: 100%.
+    tiempo_entre_fallas: 1 hora.
+    tiempo_para_mantenimiento: 1 hora.
+    promedio_de_error: Sin datos.
+    carga_de_trabajo: 80 transacciones por día.
+    porcentaje_de_degradacion: 5%.
+    utilizacion_de_recursos: Sin datos.

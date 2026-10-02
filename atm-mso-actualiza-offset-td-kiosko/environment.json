@@ -1,0 +1,16 @@
+{
+	"id": "3ec4c320-540b-4219-8a5e-36fef9ab8516",
+	"name": "PIN",
+	"values": [
+		{
+			"key": "Pin_act_cl",
+			"value": "https://atm-actualizaoffsettdkiosko-bb-dev-cajero-automatico.apps.ocpbbdevqantx.desabbol.fin.ec",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-09-18T17:08:45.231Z",
+	"_postman_exported_using": "Postman/11.96.1"
+}

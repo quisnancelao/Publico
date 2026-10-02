@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "80259fea-75c7-4ab9-ae93-30b23e498bad",
+    "name": "PIN",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23462427"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Response status code is 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.equal(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response has the required fields\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    // Validar objeto principal\r",
+              "    pm.expect(responseData).to.be.an('object');\r",
+              "\r",
+              "    // Validar campos esperados\r",
+              "    pm.expect(responseData).to.have.all.keys(\r",
+              "        'message',\r",
+              "        'status'\r",
+              "    );\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Status is 200\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData).to.have.property('status');\r",
+              "    pm.expect(responseData.status).to.be.a('number');\r",
+              "    pm.expect(responseData.status).to.equal(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Message is OK\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData).to.have.property('message');\r",
+              "    pm.expect(responseData.message).to.be.a('string');\r",
+              "    pm.expect(responseData.message).to.equal('OK');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than 5000ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n\"codigoTarjeta\": 1242520, \r\n\"mensajeUsuario\": \"00008066\" \r\n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://atm-actualizaoffsettdkiosko-bb-dev-cajero-automatico.apps.ocpbbdevqantx.desabbol.fin.ec/api/v1/monitoreo/kiosko/tarjeta/offset",
+          "protocol": "https",
+          "host": [
+            "atm-actualizaoffsettdkiosko-bb-dev-cajero-automatico",
+            "apps",
+            "ocpbbdevqantx",
+            "desabbol",
+            "fin",
+            "ec"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "monitoreo",
+            "kiosko",
+            "tarjeta",
+            "offset"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
